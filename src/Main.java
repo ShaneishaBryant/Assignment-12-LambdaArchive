@@ -10,7 +10,7 @@ public class Main {
 
         spells.add(new Spell("Lumos", 50, "Illusion", false));
         spells.add(new Spell("Vaporize", 90, "Necromancy", true));
-        spells.add(new Spell("Hellfire", 100,"Evocation",true));
+        spells.add(new Spell("Hellfire", 80,"Necromancy",true));
         spells.add(new Spell("Polymorph", 60, "Transmutation", false));
         spells.add(new Spell("Shadow Step", 70, "Illusion", false));
         spells.add(new Spell("Shield Charm", 30,"Abjuration", false));
@@ -31,13 +31,15 @@ public class Main {
         //.filter() checks if match exist
         //.collect() gathers all matching spells into brand-new list
 
-        List<Spell> filteredSpells = spells.stream()
+        List<String> mostPowerfulSpells = spells.stream()
                 .filter(spell -> spell.getSchool().equals(specificSchool))
                 .sorted((Comparator.comparingInt(Spell::getPowerLevel)).reversed())
+                .map(spell -> spell.getName()) //Why does it want to replace with method reference?
+                .limit(3)
                 .collect(Collectors.toList());
 
-        for(Spell spell : filteredSpells){
-            System.out.println(spell);
+        for(String name : mostPowerfulSpells){
+            System.out.println(name);
         }
     }
 }

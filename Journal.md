@@ -45,3 +45,27 @@ What is the difference between a “lazy” intermediate operation (like filter 
 
 
 When you call an intermediate operation, it does not do any actual work right away; it simply adds a step to an instruction list. In contrast, a terminal operation kicks off the entire stream process and executes those instructions.
+
+
+
+________________
+
+
+Phase 4 Response
+
+Explain the “pipeline” you have built. What is the source, what are the intermediate steps, and what is the final terminal operation?
+
+The pipeline:
+
+Source - spells.stream()
+> converts the standard arrayList into a stream 
+
+Intermediate - .filter(), .sorted(), map(), .limit()
+> check each spell object for matching criteria 
+> arrange spell into descending order based on power level 
+> change the data type into just their name strings 
+> put a limit of 3  items into streams 
+
+Final - .collect()
+> trigger the stream to execute and put final 3 names into brand-new list 
+
