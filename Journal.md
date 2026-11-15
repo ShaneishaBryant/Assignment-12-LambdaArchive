@@ -69,3 +69,14 @@ Intermediate - .filter(), .sorted(), map(), .limit()
 Final - .collect()
 > trigger the stream to execute and put final 3 names into brand-new list 
 
+
+
+
+_________________
+
+Phase 5 Response
+
+
+What bugs or unexpected behaviors did you catch while testing your program? If you asked an AI tutor for feedback, what did it suggest, and did you choose to make any changes? Explain your reasoning.
+
+My only initial bug involved an extra set of parentheses wrapping the comparator; otherwise, the program ran as expected. While the AI suggested encapsulating the stream into a reusable method for scalability and creating a dedicated SpellArchive class, I chose not to implement those recommendations since the current setup meets the immediate needs of the assignment. However, I did incorporate the recommendation to handle empty results gracefully, as adding a simple check made the program more robust with minimal effort.

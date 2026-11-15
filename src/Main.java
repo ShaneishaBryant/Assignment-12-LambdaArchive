@@ -9,11 +9,11 @@ public class Main {
         ArrayList<Spell> spells = new ArrayList<>();
 
         spells.add(new Spell("Lumos", 50, "Illusion", false));
-        spells.add(new Spell("Vaporize", 90, "Necromancy", true));
-        spells.add(new Spell("Hellfire", 80,"Necromancy",true));
+        spells.add(new Spell("Vaporize", 93, "Necromancy", true));
+        spells.add(new Spell("Hellfire", 95,"Necromancy",true));
         spells.add(new Spell("Polymorph", 60, "Transmutation", false));
         spells.add(new Spell("Shadow Step", 70, "Illusion", false));
-        spells.add(new Spell("Shield Charm", 30,"Abjuration", false));
+        spells.add(new Spell("Shield Charm", 90,"Necromancy", false));
         spells.add(new Spell("Memory Wipe", 50, "Enchantment", true));
         spells.add(new Spell("Avada Kedarva", 100, "Necromancy", true));
         spells.add(new Spell("Detect Magic", 10,"Divination", false));
@@ -32,14 +32,18 @@ public class Main {
         //.collect() gathers all matching spells into brand-new list
 
         List<String> mostPowerfulSpells = spells.stream()
-                .filter(spell -> spell.getSchool().equals(specificSchool))
-                .sorted((Comparator.comparingInt(Spell::getPowerLevel)).reversed())
+                .filter(spell -> spell.getSchool().equalsIgnoreCase(specificSchool))
+                .sorted(Comparator.comparingInt(Spell::getPowerLevel).reversed())
                 .map(spell -> spell.getName()) //Why does it want to replace with method reference?
                 .limit(3)
                 .collect(Collectors.toList());
 
-        for(String name : mostPowerfulSpells){
-            System.out.println(name);
+        if(mostPowerfulSpells.isEmpty()){
+            System.out.println("No forbidden spells found for this school in the archive.");
+        }else {
+            for (String name : mostPowerfulSpells) {
+                System.out.println(name);
+            }
         }
     }
 }
