@@ -31,3 +31,17 @@ How does the filter operation decide which elements to keep? In your own words, 
 The .filter decides which elements to keep by evaluating a boolean condition for every item in the stream. 
 
 The lambda expression plays the role as an instruction manual that tells the stream how to test each element. 
+
+
+
+
+______________
+
+
+Phase 3 Response 
+
+
+What is the difference between a “lazy” intermediate operation (like filter or sorted) and a “terminal” operation in a stream?
+
+
+When you call an intermediate operation, it does not do any actual work right away; it simply adds a step to an instruction list. In contrast, a terminal operation kicks off the entire stream process and executes those instructions.

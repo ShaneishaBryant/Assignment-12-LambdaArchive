@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -32,6 +33,7 @@ public class Main {
 
         List<Spell> filteredSpells = spells.stream()
                 .filter(spell -> spell.getSchool().equals(specificSchool))
+                .sorted((Comparator.comparingInt(Spell::getPowerLevel)).reversed())
                 .collect(Collectors.toList());
 
         for(Spell spell : filteredSpells){
