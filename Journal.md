@@ -17,3 +17,17 @@ What did you accomplish in this phase? Looking at your collection of spells, wha
 
 During this phase, I implemented the Spell class blueprint with encapsulated instance variables and constructor validation to establish the blueprint. In the main method, I initialized an ArrayList, populated it with ten spell instances, and used a simple for loop to print their details. 
 The distinction between a class blueprint and object instance, is the blueprint, acts as a template defining required attributes and an object instances, holds unique, concrete data.
+
+
+
+____________
+
+
+Phase 2 Response
+
+
+How does the filter operation decide which elements to keep? In your own words, what is the role of the lambda expression inside the filter?
+
+The .filter decides which elements to keep by evaluating a boolean condition for every item in the stream. 
+
+The lambda expression plays the role as an instruction manual that tells the stream how to test each element. 
